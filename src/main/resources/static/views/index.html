@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Spring boot Application Demo</title>
+    <script src="js/lib/angular.min.js"></script>
+	<script src="js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+	<script src="js/app/app.js"></script>
+	<script src="js/app/ItemController.js"></script>
+	<script src="js/app/ItemBusinessService.js"></script>
+	<link rel="stylesheet" href="css/lib/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/app/app.css"/>
+</head>
+<body ng-app="demo">
+<hr/>
+<div class="container" ng-controller="ItemController">
+    
+    <div class="row">
+    <h3>DIMS  Demo 1</h3>
+    </div>
+    
+    <div class="row">
+        <button ng-click="getItems()" class="btn btn-sm btn-info">Get Items</button>
+        <button ng-click="getUsers()" class="btn btn-sm btn-info">Get Users</button>
+    </div>
+    <br>
+    <div ng-if="allItems">
+      <table class="row" width="50%">
+      		<tr>
+      			<th>ID</th>
+      			<th>Name</th>
+      			<th>Price</th>
+      			<th>Quantity</th>
+      			<th>Value</th>
+      		</tr>
+		  <tr ng-repeat="item in allItems">
+		    <td>{{ item.id }}</td>
+		    <td>{{ item.name }}</td>
+		    <td>{{ item.price }}</td>
+		    <td>{{ item.quantity }}</td>
+		    <td>{{ item.value }}</td>
+		  </tr>
+		</table>
+		</div>
+		<br><div></div>
+		<div ng-if="allUsers">
+		<table class="row" width="50%">
+      		<tr>
+      			<th>ID</th>
+      			<th>First Name</th>
+      			<th>Last Name</th>
+      			<th>Profile Pic</th>
+      		</tr>
+		  <tr ng-repeat="user in allUsers.data">
+		    <td>{{ user.id }}</td>
+		    <td>{{ user.first_name }}</td>
+		    <td>{{ user.last_name }}</td>
+		    <td><img src='{{ user.avatar }}'><td>
+		  </tr>
+		</table>
+		</div>
+</div>
+</body>
+
+</html>

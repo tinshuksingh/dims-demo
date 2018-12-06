@@ -1,0 +1,27 @@
+{
+  "app": {
+    "name": "spring-demo",
+    "replicas": "1",
+    "cpu": "10m",
+    "memory": "128Mi",
+    "test": false,
+    "hostname": "springdemo.gp.bitwise-digital.info"
+  },
+  "container_repo": {
+    "host": "tronccontainerregistry.azurecr.io",
+    "master_acct": "pushkar-bitwise",
+    "alt_acct": "pushkar-bitwise",
+    "jenkins_creds_id": "troncregistry",
+    "repo": "spring-demo",
+    "dockeremail": ".",
+    "dockerfile": "./",
+    "image_scanning": false
+  },
+  "pipeline": {
+      "enabled": true,
+      "debug": true,
+      "library": {
+        "branch": "master"
+      }
+  }
+}

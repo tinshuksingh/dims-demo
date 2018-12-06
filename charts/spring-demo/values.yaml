@@ -1,0 +1,28 @@
+# Default values for croc-hunter.
+# This is a YAML-formatted file.
+# Declare name/value pairs to be passed into your templates.
+# name: value
+
+serviceType: ClusterIP
+servicePort: 80
+containerPort: 8080
+component: "spring-demo"
+replicas: 1
+image: "tronccontainerregistry.azurecr.io/pushkar-bitwise/spring-demo"
+imageTag: "latest"
+imagePullPolicy: "Always"
+imagePullSecrets: "acr-auth-new"
+cpu: "10m"
+memory: "128Mi"
+## Ingress settings
+ingress:
+  enabled: true
+  hostname: springdemo.gp.bitwise-digital.info
+  annotations:
+     kubernetes.io/ingress.class: nginx
+     kubernetes.io/tls-acme: "true"
+  tls: true
+## PodDisruptionBudget
+pdb:
+  enabled: false
+  minAvailable: 2
