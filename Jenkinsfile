@@ -3,7 +3,7 @@
 // load pipeline functions
 // Requires pipeline-github-lib plugin to load library from github
 
-@Library('github.com/pushkar-bitwise/jenkins-pipeline@master')
+@Library('github.com/tinshuksingh/jenkins-pipeline@master')
 
 def pipeline = new io.bitwise.Pipeline()
 
